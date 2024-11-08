@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {%block content%}
+<h2 class="user-name">Welcome again, {{user.first_name}}</h2>
+{% if user.note_count >= 1%}
+<h5>Previous Notes</h5>
+{%else%} {%endif%}
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true"> &times; </span>
+    </button>
+  </li>
+
+  {% endfor %}
+</ul>
+<form method="POST" class="Note-form">
+  <label class="text-label" for="note"> Note </label>
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Note</button>
+  </div>
+</form>
+<div class="container">
+  <h3 class="Head-note">
+    When you need to write the only way is Write Way ~ Yasser A. Albogami
+  </h3>
+</div>
+{%endblock %}

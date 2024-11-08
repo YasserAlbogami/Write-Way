@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link/ rel="stylesheet" href="..\static\base.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@797&family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" href="../static/WriteWayLogo (2).png" />
+    <script src="..\static\index.js" defer></script>
+
+    <title>{% block title %}Base{% endblock %}</title>
+  </head>
+
+  <body>
+    <nav class="navbar-main">
+      <div class="containerY">
+        <div onclick="showSideBar()" class="qw">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="50px"
+            viewBox="0 -960 960 960"
+            width="50px"
+            fill="#594a47"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </div>
+        <div class="Theme">
+          <img src="../static/WriteWayLogo (1).png" class="logo" href="/Home" />
+        </div>
+
+        <div onclick=closeSideBar() class="sidebar">
+          <div class="qw">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="50px"
+              viewBox="0 -960 960 960"
+              width="50px"
+              fill="#594a47"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+          {% if user.is_authenticated%}
+          <a class="link text" id="/Home" href="Home">Home</a>
+
+          <a class="link text" id="log-out" href="/log-out">Log-out</a>
+
+          <a class="link text" id="about" href="/About">About</a>
+          {%else%}
+          <a class="link text" id="log-in" href="/log-in">Log-in</a>
+          <a class="link text" id="sign-up" href="/sign-up">Sign-up</a>
+
+          <a class="link text" id="about" href="/About">About</a>
+          {%endif%}
+        </div>
+
+        <div class="nav-ul">
+          {% if user.is_authenticated%}
+          <a class="link" id="/Home" href="Home"
+            ><span class="text">Home</span></a
+          >
+
+          <a class="link" id="log-out" href="/log-out"
+            ><span class="text">Log-out</span></a
+          >
+
+          <a class="link" id="about" href="/About"
+            ><span class="text">About</span></a
+          >
+          {%else%}
+          <a class="link" id="log-in" href="/log-in"
+            ><span class="text">Log-in</span></a
+          >
+          <a class="link" id="sign-up" href="/sign-up"
+            ><span class="text">Sign-up</span></a
+          >
+
+          <a class="link" id="about" href="/About"
+            ><span class="text">About</span></a
+          >
+          {%endif%}
+        </div>
+      </div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %} {%if
+    messages %} {%for catagory, message in messages %} {% if catagory == 'Error'
+    %}
+    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+      {{message}}
+      <button class="close" type="button" data-dismiss="alert">
+        <span aria-hidden="true"> &times;</span>
+      </button>
+    </div>
+    {%else%}
+    <div class="alert alert-success alert-dismissable fade show" role="alert">
+      {{message}}
+      <button class="close" type="button" data-dismiss="alert">
+        <span aria-hidden="true"> &times;</span>
+      </button>
+    </div>
+
+    {%endif%} {% endfor %} {% endif %} {% endwith %}
+
+    <div class="container">{%block content %} {%endblock %}</div>
+
+    <div class="">{%block footer %} {%endblock %}</div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

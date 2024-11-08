@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<h2 class="user-name as">Hello everyone, and Welcome in Write Way</h2>
+<h5 style="font-size: 30px">About:</h5>
+<div class="paragraph-about">
+  <b> Write Way</b> is a streamlined, user-friendly note-taking platform
+  designed to help users seamlessly capture, organize, and manage their
+  thoughts. Built with a responsive frontend using HTML, CSS, JavaScript, and
+  the Bootstrap framework, Write Way provides a modern and accessible user
+  interface that adapts across various devices, ensuring notes are easy to
+  access anytime, anywhere. On the backend, Flask handles core functionality
+  through well-structured endpoints, while SQLAlchemy manages data storage
+  efficiently with an SQL database, enabling swift and reliable data retrieval.
+  Security is prioritized with user authentication implemented through Flask
+  modules, ensuring that users can safely sign up, log in, and manage their
+  personal notes within a secure environment. From casual users to avid
+  note-takers, Write Way offers a simple yet powerful tool tailored to meet the
+  demands of all note-taking needs, bringing ease and organization into everyday
+  life.
+</div>
+
+{% endblock %} {%block footer %}
+<div class="footer">
+  <div class="footer-text">
+    &copy;2024 - All rights reserved for <span>Yasser.A Albogami</span>
+  </div>
+  <a href="https://www.linkedin.com/in/yasser-albogami-650240291/">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+</div>
+
+{%endblock %}

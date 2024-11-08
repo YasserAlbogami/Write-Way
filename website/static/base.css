@@ -1,0 +1,343 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: fit-content;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Handlee", cursive;
+  height: fit-content;
+}
+
+.navbar-main {
+  background: linear-gradient(
+    90deg,
+    #fef0d9,
+    #ffedb9,
+    #ae9d71,
+    #ffdf8f,
+    #fbd5a3
+  );
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  flex-grow: 1;
+}
+
+.text {
+  font-family: "Handlee", cursive;
+  font-size: 24px;
+  color: #594a47;
+  padding: 15px;
+  position: relative;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #594a47;
+}
+
+a:hover .text {
+  border-bottom: 3px solid #ae9d71;
+  transition: 0.2s ease;
+  border-radius: 18px;
+  text-decoration: none;
+}
+
+.containerY {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.containerY {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+.Theme {
+  position: absolute;
+  left: -58px;
+}
+
+.logo {
+  width: 245px;
+}
+
+.qw {
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  nav .containerY {
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    transition: 0.3s ease-in;
+  }
+
+  .qw {
+    display: block;
+  }
+
+  .nav-ul {
+    display: none;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar .link {
+  padding: 10px 0px;
+  padding-left: 32px;
+  margin-bottom: 4px;
+
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.sidebar .link:hover:hover {
+  border-bottom: 3px solid #ae9d71;
+  transition: 0.2s ease;
+  border-radius: 18px;
+}
+
+.title {
+  font-family: "Caveat", cursive;
+  color: white;
+  font-size: 48px;
+  padding-left: 10px;
+}
+
+/* small screen */
+@media (min-width: 768px) {
+  .containerY {
+    width: 750px;
+  }
+}
+/* medium screen */
+@media (min-width: 992px) {
+  .containerY {
+    width: 970px;
+  }
+}
+/* large screen */
+@media (min-width: 1200px) {
+  .containerY {
+    width: 1170px;
+  }
+}
+
+/* Start Of Justification of templates */
+.container .btn.btn-primary {
+  background-color: #ae9d71;
+  border-color: #ae9d71;
+}
+.container .btn.btn-primary:hover {
+  background-color: #e3cc94;
+  border-color: #e3cc94;
+}
+
+.container .password-justification {
+  display: flex;
+}
+
+.container .input-group-text {
+  width: 6%;
+  justify-content: center;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.list-group.list-group-flush {
+  flex-direction: column;
+}
+
+.container h5 {
+  color: #715713;
+  margin-bottom: 6px;
+  text-align: start;
+  text-decoration: solid;
+  font-family: "Handlee", cursive;
+}
+
+.list-group.list-group-flush li {
+  font-family: "Handlee", cursive;
+  border-left: solid 3px #715713;
+  border-radius: 9px;
+  padding-bottom: 6px;
+  margin-bottom: 2px;
+  background-color: rgb(255, 245, 233);
+}
+
+.container .Note-form {
+  margin-bottom: 60px;
+}
+
+.user-name {
+  color: #715713;
+  margin-bottom: 35px;
+  text-align: start;
+  text-decoration: solid;
+  font-family: "Handlee", cursive;
+}
+
+.container .text-label {
+  color: #715713;
+  text-align: start;
+  text-decoration: solid;
+  font-family: "Handlee", cursive;
+}
+
+.Note-form .form-control {
+  margin-bottom: 12px;
+}
+
+.container .Head-note {
+  color: #e1c376;
+  padding: 8px 0;
+  background-color: #956522;
+  font-weight: bold;
+  font-family: "Handlee", cursive;
+  font-style: italic;
+  text-align: center;
+  overflow: hidden;
+  border-right: 8px solid;
+  white-space: nowrap;
+  animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
+}
+/* End Of Justification of templates */
+
+@media (990px < width < 1200px) {
+  .container .Head-note {
+    font-size: 24px;
+  }
+}
+
+@media (768px<= width <= 990px) {
+  .container .Head-note {
+    font-size: 16px;
+  }
+}
+
+@media (505px<= width < 768px) {
+  .container .Head-note {
+    font-size: 12px;
+  }
+}
+
+@media (300px <= width < 505px) {
+  .container .Head-note {
+    font-size: 7px;
+  }
+}
+
+h2.user-name.as {
+  font-size: 40px;
+  margin-top: 41px;
+  text-align: center;
+}
+
+/* .animated-paragraph {
+  color: #cea02b;
+  padding: 15px 0;
+  font-weight: bold;
+  font-family: "Handlee", cursive;
+  font-style: italic;
+  text-align: center;
+  font-size: 18px;
+  display: block;
+  overflow: hidden;
+  width: 0;
+  white-space: nowrap;
+  border-right: 3px solid #333;
+
+  animation: typing 3s steps(50, end) forwards,
+    blink-caret 0.75s step-end infinite;
+} */
+
+/* Set delay for each span to make them type sequentially */
+.paragraph-about {
+  color: #cea02b;
+  padding: 15px 7px;
+  font-weight: bold;
+  font-family: "Handlee", cursive;
+  font-style: italic;
+  text-align: center;
+  font-size: 18px;
+  line-height: 5.5vh;
+  border-radius: 18px;
+  border: solid 3px #715713;
+  margin-bottom: 38px;
+}
+
+.footer {
+  background-color: #715713;
+  width: 100%;
+  height: 58px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer .footer-text {
+  color: white;
+}
+.footer .footer-text span {
+  color: white;
+}
+@media (max-width: 992px) {
+  .footer .footer-text {
+    font-size: 13px;
+  }
+}
+
+.footer i {
+  color: white;
+  cursor: pointer;
+}
