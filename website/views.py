@@ -1,4 +1,4 @@
-# views.py is where the URLs root pages stored homePage, loginPgae, contactPage etc.
+# views.py is where the URLs root pages stored other than auth
 
 from flask import Blueprint, render_template
 
